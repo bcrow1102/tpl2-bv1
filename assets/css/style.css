@@ -1984,12 +1984,13 @@ button {
   min-height: 300px;
   padding: 26px 22px 24px;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, .96);
-  border: 1px solid rgba(226, 232, 240, .9);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 252, .98) 0%, rgba(255, 241, 246, .96) 100%);
+  border: 1px solid rgba(255, 220, 228, .66);
   border-radius: 32px;
   box-shadow:
-    0 34px 80px rgba(47, 103, 255, .16),
-    0 16px 38px rgba(15, 23, 42, .10);
+    0 34px 80px rgba(255, 174, 190, .22),
+    0 16px 38px rgba(15, 23, 42, .09);
   backdrop-filter: blur(18px);
   display: flex;
   flex-direction: column;
@@ -2032,15 +2033,14 @@ button {
 }
 
 .floating-money-card__label {
-  font-size: 15px;
+  font-size: 19px;
   font-weight: 900;
   color: #374151;
-  margin-bottom: 10px;
-  letter-spacing: -0.04em;
+  margin-bottom: 8px;
 }
 
 .floating-money-card__price {
-  font-size: 64px;
+  font-size: 50px;
   line-height: .96;
   font-weight: 950;
   color: #6f86e8;
@@ -2064,10 +2064,10 @@ button {
 }
 
 .floating-money-card__sub {
-  margin-top: 6px;
-  font-size: 22px;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.42;
   font-weight: 900;
-  line-height: 1.15;
   color: #2f3747;
 }
 
@@ -2130,6 +2130,7 @@ button {
     justify-content: center;
     width: calc(100% - 16px);
     margin: 0 auto;
+    border-radius: 10px;
   }
 
   .hero-primary-media__label {
@@ -2165,12 +2166,12 @@ button {
     order: 2;
     position: absolute;
     left: 50%;
-    top: 235px;
+    top: 255px;
     transform: translateX(-50%) rotate(-2deg);
     margin: 0;
     z-index: 20;
-    width: 210px;
-    min-height: 255px;
+    width: 198px;
+    min-height: 242px;
     padding: 22px 18px 20px;
     border-radius: 28px;
   }
@@ -2187,16 +2188,12 @@ button {
   }
 
   .floating-money-card__label {
-    font-size: 15px;
-    margin-bottom: 10px;
+    font-size: 17px;
+    margin-bottom: 6px;
   }
 
   .floating-money-card__price {
-    font-size: 58px;
-  }
-
-  .floating-money-card__price span {
-    font-size: 16px;
+    font-size: 39px;
   }
 
   .floating-money-card__line {
@@ -2204,8 +2201,8 @@ button {
   }
 
   .floating-money-card__sub {
-    font-size: 20px;
-    line-height: 1.12;
+    font-size: 16px;
+    line-height: 1.35;
   }
 
   .floating-money-card__sub span {
@@ -2233,7 +2230,6 @@ button {
     transform: translateY(24px);
     transition: opacity 1.05s ease-out, transform 1.05s cubic-bezier(.22, 1, .36, 1);
   }
-
 }
 
 
