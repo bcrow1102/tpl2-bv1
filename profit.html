@@ -34,14 +34,18 @@
         }
 
         .brand {
-            font-size: 20px;
-            font-weight: 900;
-            letter-spacing: -.04em;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: -.03em;
             margin-bottom: 34px;
+            color: #6b7280;
         }
 
         .brand span {
             color: #5c83ed;
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: -.04em;
         }
 
         .hero {
@@ -73,6 +77,7 @@
             font-size: 16px;
             line-height: 1.75;
             color: #6b7280;
+            word-break: keep-all;
         }
 
         .search {
@@ -287,7 +292,7 @@
 
         .value {
             font-size: 18px;
-            font-weight: 900;
+            font-weight: 750;
             text-align: right;
             line-height: 1.35;
             word-break: keep-all;
@@ -364,6 +369,14 @@
                 margin-bottom: 26px
             }
 
+            .desc,
+            .empty,
+            .notice p,
+            .merit-desc {
+                word-break: keep-all;
+                overflow-wrap: normal;
+            }
+
             .search {
                 grid-template-columns: 1fr;
                 padding: 18px;
@@ -409,7 +422,11 @@
             <section class="hero">
                 <div class="eyebrow">HUMAN BLUEDEVILLE PROFIT</div>
                 <h1 class="title">호실을 입력하면<br><span>조건이 바로 열립니다</span></h1>
-                <p class="desc">블루드빌 고객용 실시간 조회 화면입니다.<br>호실별 타입, 면적, 방향, 가격 메리트를 확인할 수 있습니다.</p>
+                <p class="desc">
+                    블루드빌 고객용 실시간 조회 화면입니다.<br>
+                    호실별 타입, 면적, 방향, 가격 메리트를<br>
+                    확인할 수 있습니다.
+                </p>
             </section>
 
             <section class="search">
@@ -479,7 +496,7 @@
 
                 <section class="notice">
                     <div>
-                        <strong>조건은 먼저 확인한 사람이 유리합니다.</strong>
+                        <strong>조건은 먼저 확인한<br>사람이 유리합니다.</strong>
                         <p>같은 블루드빌이어도 호실마다 가격과 상태가 다를 수 있습니다. 관심 호실은 빠르게 문의 주세요.</p>
                     </div>
                     <a href="tel:01059361556">전화 문의</a>
@@ -517,7 +534,9 @@
             if (v === null || v === undefined || v === "") return "-";
             const n = Number(v);
             if (Number.isNaN(n)) return "-";
-            return n.toLocaleString("ko-KR") + "만 원";
+
+            const manwon = Math.round(n / 10000);
+            return manwon.toLocaleString("ko-KR") + " 만원";
         }
 
         function statusClass(status) {
