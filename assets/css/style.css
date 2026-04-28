@@ -2390,3 +2390,16 @@ button {
     line-height: 1.15 !important;
   }
 }
+
+@media (max-width: 900px) {
+  .hero-primary-media__bottom>* {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-primary-media__icon,
+  .hero-primary-media__icon svg {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
