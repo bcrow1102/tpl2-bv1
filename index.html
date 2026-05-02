@@ -29,12 +29,12 @@
       t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
     }
       (window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_META_PIXEL_ID');
+    fbq('init', '1668565077617455');
     fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1" />
+      src="https://www.facebook.com/tr?id=1668565077617455&ev=PageView&noscript=1" />
   </noscript>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -118,7 +118,8 @@
           </p>
 
           <div class="hero-saas__cta-row">
-            <a href="tel:0529608268" class="hero-saas__cta hero-saas__cta--primary" onclick="fbq('track','Lead')" data-track="phone" data-track-location="hero">
+            <a href="tel:0529608268" class="hero-saas__cta hero-saas__cta--primary" onclick="fbq('track','Lead')"
+              data-track="phone" data-track-location="hero">
               조건 확인
             </a>
 
@@ -403,7 +404,8 @@
         </p>
 
         <div class="zimo-final__cta-row">
-          <a href="tel:0529608268" class="zimo-btn zimo-btn--primary" data-track="phone" data-track-location="final">전화 상담</a>
+          <a href="tel:0529608268" class="zimo-btn zimo-btn--primary" data-track="phone" data-track-location="final">전화
+            상담</a>
           <a href="https://open.kakao.com/o/suD41Usi" class="zimo-btn zimo-btn--secondary" target="_blank"
             rel="noopener" data-track="kakao" data-track-location="final">카카오톡 상담</a>
         </div>
@@ -551,16 +553,16 @@
     document.addEventListener("DOMContentLoaded", function () {
       var eventNames = {
         phone: { ga4: "contact_phone_click", meta: "ContactPhoneClick" },
-        sms:   { ga4: "contact_sms_click",   meta: "ContactSmsClick" },
+        sms: { ga4: "contact_sms_click", meta: "ContactSmsClick" },
         kakao: { ga4: "contact_kakao_click", meta: "ContactKakaoClick" }
       };
 
       document.querySelectorAll("[data-track]").forEach(function (el) {
         el.addEventListener("click", function () {
-          var type     = el.dataset.track;
+          var type = el.dataset.track;
           var location = el.dataset.trackLocation || "unknown";
-          var href     = el.getAttribute("href") || "";
-          var config   = eventNames[type];
+          var href = el.getAttribute("href") || "";
+          var config = eventNames[type];
 
           if (!config) return;
 
