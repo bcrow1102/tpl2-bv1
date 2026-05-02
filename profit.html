@@ -499,7 +499,7 @@
                         <strong>조건은 먼저 확인한<br>사람이 유리합니다.</strong>
                         <p>같은 블루드빌이어도 호실마다 가격과 상태가 다를 수 있습니다. 관심 호실은 빠르게 문의 주세요.</p>
                     </div>
-                    <a href="tel:0529608268">전화 문의</a>
+                    <a href="tel:0529608268" data-track="phone" data-track-location="profit">전화 문의</a>
                 </section>
 
             </section>
@@ -625,6 +625,43 @@
 
         document.getElementById("roomInput").addEventListener("keydown", function (e) {
             if (e.key === "Enter") searchRoom();
+        });
+    </script>
+
+    <!-- Click Tracking: GA4 + Meta Pixel -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var eventNames = {
+                phone: { ga4: "contact_phone_click", meta: "ContactPhoneClick" },
+                sms:   { ga4: "contact_sms_click",   meta: "ContactSmsClick" },
+                kakao: { ga4: "contact_kakao_click", meta: "ContactKakaoClick" }
+            };
+
+            document.querySelectorAll("[data-track]").forEach(function (el) {
+                el.addEventListener("click", function () {
+                    var type     = el.dataset.track;
+                    var location = el.dataset.trackLocation || "unknown";
+                    var href     = el.getAttribute("href") || "";
+                    var config   = eventNames[type];
+
+                    if (!config) return;
+
+                    var payload = {
+                        contact_type: type,
+                        location: location,
+                        page_path: window.location.pathname,
+                        link_url: href
+                    };
+
+                    if (typeof window.gtag === "function") {
+                        window.gtag("event", config.ga4, payload);
+                    }
+
+                    if (typeof window.fbq === "function") {
+                        window.fbq("trackCustom", config.meta, payload);
+                    }
+                });
+            });
         });
     </script>
 
