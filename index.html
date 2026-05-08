@@ -175,6 +175,13 @@
                   <span class="hero-primary-media__badge">회사보유분 30% 할인분양</span>
                 </div>
 
+                <a href="tel:0529608268" class="hero-mobile-call-reveal" data-track="phone"
+                  data-track-location="hero-mobile-reveal">
+                  <span class="hero-mobile-call-reveal__label">상담 직통</span>
+                  <strong>052-960-8268</strong>
+
+                </a>
+
                 <div class="hero-primary-media__title-wrap">
                   <h2 class="hero-primary-media__title">
                     휴먼 블루드빌<br>
@@ -545,6 +552,18 @@
           item.classList.add('is-visible');
         }, delays[index] || 3000);
       });
+    });
+  </script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.innerWidth > 900) return;
+
+      const callReveal = document.querySelector('.hero-mobile-call-reveal');
+      if (!callReveal) return;
+
+      setTimeout(function () {
+        callReveal.classList.add('is-visible');
+      }, 1300);
     });
   </script>
 

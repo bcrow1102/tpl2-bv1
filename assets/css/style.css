@@ -2397,3 +2397,71 @@ button {
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+/* Mobile hero call reveal */
+.hero-mobile-call-reveal {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .hero-mobile-call-reveal {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    width: fit-content;
+    max-width: calc(100% - 36px);
+
+    margin-top: 10px;
+    margin-left: 0;
+
+    padding: 7px 13px;
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.9);
+    color: #1e3a8a;
+
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    text-decoration: none;
+
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.14);
+
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.45s ease,
+      transform 0.45s ease,
+      box-shadow 0.45s ease;
+
+    z-index: 8;
+  }
+
+  .hero-mobile-call-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow:
+      0 0 0 4px rgba(59, 130, 246, 0.1),
+      0 10px 24px rgba(15, 23, 42, 0.16);
+  }
+
+  .hero-mobile-call-reveal__label {
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .hero-mobile-call-reveal strong {
+    font-size: 13px;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .hero-mobile-call-reveal em {
+    display: none;
+  }
+}
