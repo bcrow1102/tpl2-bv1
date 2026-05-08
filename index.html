@@ -222,7 +222,8 @@
                     </span>
                   </div>
 
-                  <a href="profit.html" class="hero-primary-media__action">
+                  <a href="profit.html" class="hero-primary-media__action" data-track="price"
+                    data-track-location="hero">
                     할인분양가 확인
                   </a>
                 </div>
@@ -547,7 +548,8 @@
       var eventNames = {
         phone: { ga4: "contact_phone_click", meta: "ContactPhoneClick" },
         sms: { ga4: "contact_sms_click", meta: "ContactSmsClick" },
-        kakao: { ga4: "contact_kakao_click", meta: "ContactKakaoClick" }
+        kakao: { ga4: "contact_kakao_click", meta: "ContactKakaoClick" },
+        price: { ga4: "price_check_click", meta: "PriceCheckClick" }
       };
 
       document.querySelectorAll("[data-track]").forEach(function (el) {
