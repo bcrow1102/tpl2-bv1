@@ -1777,19 +1777,21 @@ button {
 @media (max-width:900px) {
 
   .hero-primary-media__bottom>* {
-    opacity: 0;
-    transform: translateY(14px);
-    transition: opacity .75s ease-out, transform .75s cubic-bezier(.22, 1, .36, 1);
+    opacity: 1;
+    visibility: visible;
+    transform: none;
   }
 
   .hero-primary-media__bottom>*.is-visible {
     opacity: 1;
-    transform: translateY(0);
+    visibility: visible;
+    transform: none;
   }
 
   .hero-primary-media__action {
-    transform: translateY(24px);
-    transition: opacity 1.05s ease-out, transform 1.05s cubic-bezier(.22, 1, .36, 1);
+    opacity: 1;
+    visibility: visible;
+    transform: none;
   }
 
 }
@@ -2430,22 +2432,19 @@ button {
 
     box-shadow: 0 8px 22px rgba(15, 23, 42, 0.14);
 
-    opacity: 0;
-    transform: translateY(8px);
-    transition:
-      opacity 0.45s ease,
-      transform 0.45s ease,
-      box-shadow 0.45s ease;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
 
     z-index: 8;
   }
 
   .hero-mobile-call-reveal.is-visible {
     opacity: 1;
-    transform: translateY(0);
-    box-shadow:
-      0 0 0 4px rgba(59, 130, 246, 0.1),
-      0 10px 24px rgba(15, 23, 42, 0.16);
+    visibility: visible;
+    transform: none;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.14);
   }
 
   .hero-mobile-call-reveal__label {
@@ -2463,5 +2462,89 @@ button {
 
   .hero-mobile-call-reveal em {
     display: none;
+  }
+}
+
+/* ✅ 모바일 히어로 순차 등장 복구 - style.css 맨 아래 */
+@media (max-width: 900px) {
+  .hero-primary-media {
+    min-height: 520px !important;
+    padding: 24px 20px 22px !important;
+  }
+
+  .hero-primary-media__content {
+    min-height: 472px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .hero-primary-media__bottom {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin-top: 18px !important;
+  }
+
+  .hero-mobile-call-reveal {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(10px) !important;
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s cubic-bezier(.22, 1, .36, 1),
+      visibility 0s linear 0.7s !important;
+  }
+
+  .hero-mobile-call-reveal.is-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s cubic-bezier(.22, 1, .36, 1),
+      visibility 0s linear 0s !important;
+  }
+
+  .hero-primary-media__bottom>* {
+    display: flex !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(14px) !important;
+    transition:
+      opacity 0.75s ease-out,
+      transform 0.75s cubic-bezier(.22, 1, .36, 1),
+      visibility 0s linear 0.75s !important;
+  }
+
+  .hero-primary-media__bottom>*.is-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    transition:
+      opacity 0.75s ease-out,
+      transform 0.75s cubic-bezier(.22, 1, .36, 1),
+      visibility 0s linear 0s !important;
+  }
+
+  .hero-primary-media__stat,
+  .hero-primary-media__action {
+    width: calc(100% - 16px) !important;
+    min-height: 58px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-primary-media__stat {
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    padding: 10px 16px !important;
+  }
+
+  .hero-primary-media__action {
+    align-items: center !important;
+    justify-content: center !important;
   }
 }

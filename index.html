@@ -538,34 +538,8 @@
       });
     });
   </script>
-  <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      if (window.innerWidth > 900) return;
 
-      const heroItems = document.querySelectorAll('.hero-primary-media__bottom > *');
-      if (!heroItems.length) return;
 
-      const delays = [2000, 3000, 4300];
-
-      heroItems.forEach(function (item, index) {
-        setTimeout(function () {
-          item.classList.add('is-visible');
-        }, delays[index] || 3000);
-      });
-    });
-  </script>
-  <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      if (window.innerWidth > 900) return;
-
-      const callReveal = document.querySelector('.hero-mobile-call-reveal');
-      if (!callReveal) return;
-
-      setTimeout(function () {
-        callReveal.classList.add('is-visible');
-      }, 1300);
-    });
-  </script>
 
   <!-- Click Tracking: GA4 + Meta Pixel -->
   <script>
@@ -600,6 +574,26 @@
             window.fbq("trackCustom", config.meta, payload);
           }
         });
+      });
+    });
+  </script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.innerWidth > 900) return;
+
+      const callReveal = document.querySelector('.hero-mobile-call-reveal');
+      const bottomItems = document.querySelectorAll('.hero-primary-media__bottom > *');
+
+      if (callReveal) {
+        setTimeout(function () {
+          callReveal.classList.add('is-visible');
+        }, 900);
+      }
+
+      bottomItems.forEach(function (item, index) {
+        setTimeout(function () {
+          item.classList.add('is-visible');
+        }, 1500 + index * 260);
       });
     });
   </script>
