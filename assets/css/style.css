@@ -1777,21 +1777,19 @@ button {
 @media (max-width:900px) {
 
   .hero-primary-media__bottom>* {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .75s ease-out, transform .75s cubic-bezier(.22, 1, .36, 1);
   }
 
   .hero-primary-media__bottom>*.is-visible {
     opacity: 1;
-    visibility: visible;
-    transform: none;
+    transform: translateY(0);
   }
 
   .hero-primary-media__action {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+    transform: translateY(24px);
+    transition: opacity 1.05s ease-out, transform 1.05s cubic-bezier(.22, 1, .36, 1);
   }
 
 }
@@ -2400,151 +2398,71 @@ button {
   visibility: visible !important;
 }
 
-/* Mobile hero call reveal */
-.hero-mobile-call-reveal {
-  display: none;
+.hero-primary-media__badge--phone {
+  margin-top: 14px;
+  width: fit-content;
+}
+
+.hero-primary-media__badge--phone strong {
+  color: #1e3a8a;
+  font-weight: 900;
 }
 
 @media (max-width: 900px) {
-  .hero-mobile-call-reveal {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
+  .hero-primary-media__badge--phone {
+    margin-top: 12px;
+  }
+}
 
-    width: fit-content;
-    max-width: calc(100% - 36px);
+/* PC 전용: 히어로 영상 상단 배지 위치 조정 */
+@media (min-width: 901px) {
+  .hero-primary-media__topline {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 
-    margin-top: 10px;
+  .hero-primary-media__badge--phone {
+    margin-top: 0;
     margin-left: 0;
-
-    padding: 7px 13px;
-    border-radius: 999px;
-
-    background: rgba(255, 255, 255, 0.9);
-    color: #1e3a8a;
-
-    font-size: 11px;
-    font-weight: 800;
-    line-height: 1;
-    text-decoration: none;
-
-    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.14);
-
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    transition: none;
-
-    z-index: 8;
-  }
-
-  .hero-mobile-call-reveal.is-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.14);
-  }
-
-  .hero-mobile-call-reveal__label {
-    color: #64748b;
-    font-size: 10px;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-
-  .hero-mobile-call-reveal strong {
-    font-size: 13px;
-    letter-spacing: -0.02em;
-    white-space: nowrap;
-  }
-
-  .hero-mobile-call-reveal em {
-    display: none;
   }
 }
 
-/* ✅ 모바일 히어로 순차 등장 복구 - style.css 맨 아래 */
+/* 모바일 히어로 텍스트 줄간격 미세 조정 */
 @media (max-width: 900px) {
-  .hero-primary-media {
-    min-height: 520px !important;
-    padding: 24px 20px 22px !important;
+  .hero-saas__title {
+    line-height: 1.06;
   }
 
-  .hero-primary-media__content {
-    min-height: 472px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
+  .hero-saas__desc {
+    margin-top: 30px;
+    line-height: 1.9;
   }
+}
 
-  .hero-primary-media__bottom {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-    margin-top: 18px !important;
-  }
+/* 플로팅 카드 텍스트 선명도 보정 */
+.floating-money-card {
+  background: rgba(255, 255, 255, 0.96);
+}
 
-  .hero-mobile-call-reveal {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    transform: translateY(10px) !important;
-    transition:
-      opacity 0.7s ease,
-      transform 0.7s cubic-bezier(.22, 1, .36, 1),
-      visibility 0s linear 0.7s !important;
-  }
+.floating-money-card__label {
+  color: #1f2937;
+  font-weight: 900;
+}
 
-  .hero-mobile-call-reveal.is-visible {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0) !important;
-    transition:
-      opacity 0.7s ease,
-      transform 0.7s cubic-bezier(.22, 1, .36, 1),
-      visibility 0s linear 0s !important;
-  }
+.floating-money-card__price {
+  color: #5f7eea;
+  font-weight: 950;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+}
 
-  .hero-primary-media__bottom>* {
-    display: flex !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    transform: translateY(14px) !important;
-    transition:
-      opacity 0.75s ease-out,
-      transform 0.75s cubic-bezier(.22, 1, .36, 1),
-      visibility 0s linear 0.75s !important;
-  }
+.floating-money-card__price span {
+  color: #5f7eea;
+  font-weight: 900;
+}
 
-  .hero-primary-media__bottom>*.is-visible {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0) !important;
-    transition:
-      opacity 0.75s ease-out,
-      transform 0.75s cubic-bezier(.22, 1, .36, 1),
-      visibility 0s linear 0s !important;
-  }
-
-  .hero-primary-media__stat,
-  .hero-primary-media__action {
-    width: calc(100% - 16px) !important;
-    min-height: 58px !important;
-    margin: 0 auto !important;
-    box-sizing: border-box !important;
-  }
-
-  .hero-primary-media__stat {
-    align-items: center !important;
-    justify-content: flex-start !important;
-    flex-direction: row !important;
-    gap: 10px !important;
-    padding: 10px 16px !important;
-  }
-
-  .hero-primary-media__action {
-    align-items: center !important;
-    justify-content: center !important;
-  }
+.floating-money-card__sub span {
+  color: #374151;
+  font-weight: 800;
 }

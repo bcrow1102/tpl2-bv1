@@ -34,8 +34,7 @@
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1668565077617455&ev=PageView&noscript=1" />
-  </noscript>
+      src="https://www.facebook.com/tr?id=1668565077617455&ev=PageView&noscript=1" /> </noscript>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -106,25 +105,27 @@
         <div class="hero-saas__left">
 
           <h1 class="hero-saas__title">
-            울산시청 바로 옆<br />
-            <span>30% 할인분양</span><br />
-            <span>1억에 2채</span>
+            월 70만원<br />
+            <span>작아 보이시죠?</span><br />
+            <span>내 부동산에서</span>
           </h1>
 
           <p class="hero-saas__desc">
-            주택수 미포함 오피스텔<br>
-            회사보유분 특별 조건으로<br class="mobile-only-break">
-            월세 70만 기준 상담 가능합니다.
+            나온다면 이야기가 달라집니다.<br>
+            주택수 걱정 없이 4천 전후로<br>
+            안정적인 월세 자산을 준비해 보세요.
           </p>
 
+
+
           <div class="hero-saas__cta-row">
-            <a href="tel:0529608268" class="hero-saas__cta hero-saas__cta--primary" onclick="fbq('track','Lead')"
-              data-track="phone" data-track-location="hero">
+            <a href="tel:0529608268" class="hero-saas__cta hero-saas__cta--primary"
+              onclick="if(window.fbq){fbq('track','Lead',{content_name:'hero_phone'});}">
               조건 확인
             </a>
 
             <a href="https://open.kakao.com/o/suD41Usi" class="hero-saas__cta hero-saas__cta--ghost" target="_blank"
-              rel="noopener" data-track="kakao" data-track-location="hero">
+              rel="noopener" onclick="if(window.fbq){fbq('track','Lead',{content_name:'hero_kakao'});}">
               카카오 상담
             </a>
           </div>
@@ -146,15 +147,14 @@
             </svg>
           </div>
 
-          <span class="floating-money-card__label">회사보유분</span>
+          <span class="floating-money-card__label">내 부동산 월세</span>
 
           <strong class="floating-money-card__price">
-            1억<span>에 2채</span>
+            70만<span>기준 상담</span>
           </strong>
 
           <p class="floating-money-card__sub">
-            <span>주택수 미포함</span><br>
-            <span>수익률 12%</span>
+            <span>4천 전후로 시작 가능</span>
           </p>
         </div>
 
@@ -173,18 +173,14 @@
 
                 <div class="hero-primary-media__topline">
                   <span class="hero-primary-media__badge">회사보유분 30% 할인분양</span>
+                  <span class="hero-primary-media__badge hero-primary-media__badge--phone">
+                    상담 직통&nbsp; <strong>052-960-8268</strong>
+                  </span>
                 </div>
-
-                <a href="tel:0529608268" class="hero-mobile-call-reveal" data-track="phone"
-                  data-track-location="hero-mobile-reveal">
-                  <span class="hero-mobile-call-reveal__label">상담 직통</span>
-                  <strong>052-960-8268</strong>
-
-                </a>
 
                 <div class="hero-primary-media__title-wrap">
                   <h2 class="hero-primary-media__title">
-                    휴먼 블루드빌<br>
+                    휴먼블루드빌<br>
                     오피스텔
                   </h2>
                 </div>
@@ -222,9 +218,9 @@
                     </span>
                   </div>
 
-                  <a href="profit.html" class="hero-primary-media__action" data-track="price"
-                    data-track-location="hero">
-                    할인분양가 확인
+                  <a href="profit.html" class="hero-primary-media__action"
+                    onclick="if(window.fbq){fbq('trackCustom','ProfitLinkClick',{content_name:'hero_profit_link'});}">
+                    할인 분양가 확인
                   </a>
                 </div>
 
@@ -269,11 +265,10 @@
                 <h3 class="hero-benefit-accordion__title">지모 전용 조건 안내</h3>
 
                 <ul class="hero-benefit-accordion__list">
-                  <li>회사보유분 30% 할인분양 조건으로 상담 가능합니다.</li>
-                  <li>1억에 2채 가능 조건을 확인할 수 있습니다.</li>
-                  <li>보증금 1천 / 월세 70만 기준 상담 가능합니다.</li>
-                  <li>오피스텔 기준 주택수 미포함 상담 가능합니다.</li>
-                  <li>울산시청 바로 옆 입지입니다.</li>
+                  <li>보증금 1천 / 월세 70 기준 상담 가능합니다.</li>
+                  <li>최근 매매가와 임대료 모두 상승 흐름을 보이고 있습니다.</li>
+                  <li>일부 호실 기준 전년 대비 월세가 20% 이상 상승한 사례가 있습니다.</li>
+                  <li>실투자금 4천 전후 가능 세대가 있습니다.</li>
                 </ul>
 
                 <p class="hero-benefit-accordion__note">
@@ -408,18 +403,24 @@
           1억으로 2채,<br class="mobile-only-break">
           월세 70만 기준 수익 구조
           <br class="mobile-only-break">
-          지금 회사보유분 조건을 확인하세요.
+          지금 회사보유분 조건을 확인하세요
         </p>
 
         <div class="zimo-final__cta-row">
-          <a href="tel:0529608268" class="zimo-btn zimo-btn--primary" data-track="phone" data-track-location="final">전화
-            상담</a>
+          <a href="tel:0529608268" class="zimo-btn zimo-btn--primary"
+            onclick="if(window.fbq){fbq('track','Lead',{content_name:'final_phone'});}">
+            전화 상담
+          </a>
+
           <a href="https://open.kakao.com/o/suD41Usi" class="zimo-btn zimo-btn--secondary" target="_blank"
-            rel="noopener" data-track="kakao" data-track-location="final">카카오톡 상담</a>
+            rel="noopener" onclick="if(window.fbq){fbq('track','Lead',{content_name:'final_kakao'});}">
+            카카오톡 상담
+          </a>
         </div>
 
         <p class="zimo-final__sub-contact">
-          통화가 어려우시면 <a href="sms:01094214841" data-track="sms" data-track-location="final">문자로 문의</a>
+          통화가 어려우시면 <a href="sms:0529608268"
+            onclick="if(window.fbq){fbq('track','Lead',{content_name:'final_sms'});}">문자로 문의</a>
         </p>
       </div>
 
@@ -539,63 +540,19 @@
       });
     });
   </script>
-
-
-
-  <!-- Click Tracking: GA4 + Meta Pixel -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var eventNames = {
-        phone: { ga4: "contact_phone_click", meta: "ContactPhoneClick" },
-        sms: { ga4: "contact_sms_click", meta: "ContactSmsClick" },
-        kakao: { ga4: "contact_kakao_click", meta: "ContactKakaoClick" },
-        price: { ga4: "price_check_click", meta: "PriceCheckClick" }
-      };
-
-      document.querySelectorAll("[data-track]").forEach(function (el) {
-        el.addEventListener("click", function () {
-          var type = el.dataset.track;
-          var location = el.dataset.trackLocation || "unknown";
-          var href = el.getAttribute("href") || "";
-          var config = eventNames[type];
-
-          if (!config) return;
-
-          var payload = {
-            contact_type: type,
-            location: location,
-            page_path: window.location.pathname,
-            link_url: href
-          };
-
-          if (typeof window.gtag === "function") {
-            window.gtag("event", config.ga4, payload);
-          }
-
-          if (typeof window.fbq === "function") {
-            window.fbq("trackCustom", config.meta, payload);
-          }
-        });
-      });
-    });
-  </script>
   <script>
     window.addEventListener('DOMContentLoaded', function () {
       if (window.innerWidth > 900) return;
 
-      const callReveal = document.querySelector('.hero-mobile-call-reveal');
-      const bottomItems = document.querySelectorAll('.hero-primary-media__bottom > *');
+      const heroItems = document.querySelectorAll('.hero-primary-media__bottom > *');
+      if (!heroItems.length) return;
 
-      if (callReveal) {
-        setTimeout(function () {
-          callReveal.classList.add('is-visible');
-        }, 900);
-      }
+      const delays = [2000, 3000, 4300];
 
-      bottomItems.forEach(function (item, index) {
+      heroItems.forEach(function (item, index) {
         setTimeout(function () {
           item.classList.add('is-visible');
-        }, 1500 + index * 260);
+        }, delays[index] || 3000);
       });
     });
   </script>
