@@ -913,26 +913,37 @@
           console.warn("[ZIMO TRACK ERROR]", error);
         });
       }
+      function trackGoogleAdsContactConversion() {
+        if (typeof gtag !== "function") return;
+
+        gtag("event", "conversion", {
+          "send_to": "AW-18000889982/bQRqCIjO2LMcPF6Qv4dD",
+          "value": 1.0,
+          "currency": "KRW"
+        });
+      }
 
       function bindClicks() {
         document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
           el.addEventListener("click", function () {
             trackEvent("call_click");
+            trackGoogleAdsContactConversion();
           });
         });
 
         document.querySelectorAll('a[href^="sms:"]').forEach(function (el) {
           el.addEventListener("click", function () {
             trackEvent("sms_click");
+            trackGoogleAdsContactConversion();
           });
         });
 
         document.querySelectorAll('a[href*="open.kakao.com"], a[href*="pf.kakao.com"], a[href*="kakao"]').forEach(function (el) {
           el.addEventListener("click", function () {
             trackEvent("kakao_click");
+            trackGoogleAdsContactConversion();
           });
         });
-
         document.querySelectorAll('a[href*="profit.html"]').forEach(function (el) {
           el.addEventListener("click", function () {
             trackEvent("profit_click");
